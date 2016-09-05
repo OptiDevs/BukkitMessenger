@@ -47,12 +47,12 @@ public class Commands implements CommandExecutor {
 				sender.sendMessage(Lang.INVALID_ARGS.toString());
 			} else if (args[0].equalsIgnoreCase("MSG") || args[0].equalsIgnoreCase("MESSAGE")) {
 				Main.gi();
-				if (sender.isOp() || Main.permission.has(sender, "BukkitMessenger.msg")) {
+				if (sender.isOp() || sender.hasPermission("BukkitMessenger.msg")) {
 					// BM MSG <PLAYER> <MESSAGE>
 					if (args.length >= 3) {
 						String msg = "";
 						for (int i = 2; i < args.length; i++) {
-							msg = msg + args[i] + "";
+							msg = msg + args[i] + " ";
 						}
 						msg = msg.trim();
 						String snd = "";
@@ -71,7 +71,7 @@ public class Commands implements CommandExecutor {
 					return true;
 				}
 			} else if (args[0].equalsIgnoreCase("FIND")) {
-				if (sender.isOp() || Main.permission.has(sender, "BukkitMessenger.find.player")) {
+				if (sender.isOp() || sender.hasPermission("BukkitMessenger.find.player")) {
 					// BM FIND <PLAYER>
 					if (args.length == 2) {
 						Action.findPlayer(args[1]);
@@ -85,7 +85,7 @@ public class Commands implements CommandExecutor {
 					return true;
 				}
 			} else if (args[0].equalsIgnoreCase("SERVER")) {
-				if (sender.isOp() || Main.permission.has(sender, "BukkitMessenger.find.server")) {
+				if (sender.isOp() || sender.hasPermission("BukkitMessenger.find.server")) {
 					// BM FIND <PLAYER>
 					if (args.length == 2) {
 						Action.findServer(args[1]);
@@ -99,7 +99,7 @@ public class Commands implements CommandExecutor {
 					return true;
 				}
 			} else if (args[0].equalsIgnoreCase("RELOAD")) {
-				if (sender.isOp() || Main.permission.has(sender, "BukkitMessenger.admin")) {
+				if (sender.isOp() || sender.hasPermission("BukkitMessenger.admin")) {
 					// BM RELOAD
 					if (args.length == 1) {
 						m.reloadConfig();

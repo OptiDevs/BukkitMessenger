@@ -6,7 +6,6 @@ description: BukkitMessenger
 author: DiamondDeveloper
 website: http://wwww.Voltiac.ml/
 database: false
-depend: [Vault]
 commands:
  BukkitMessenger:
     aliases: [bm, vbm, irc]
