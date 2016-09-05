@@ -1,0 +1,17 @@
+main: ml.voltiac.bukkit.messenger.Main
+name: BukkitMessenger
+version: 0.1
+prefix: BukkitMessenger
+description: BukkitMessenger
+author: DiamondDeveloper
+website: http://wwww.Voltiac.ml/
+database: false
+depend: [Vault]
+commands:
+ BukkitMessenger:
+    aliases: [bm, vbm, irc]
+    description: VoltiacAPI Command
+permissions:
+  BukkitMessenger.*:
+    description: Base permission
+    default: OP
